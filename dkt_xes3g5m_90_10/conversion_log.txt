@@ -1,0 +1,6 @@
+ℹ️ Excluded 194 users with avg_correct < 0.4
+ℹ️ Excluded 0 users with fewer than 100 interactions
+✅ Wrote 90/10 train-test split to XES3G5M/question_level/dataset_split.txt
+✅ Wrote XES3G5M/question_level/dataset.txt
+✅ Wrote sampled_users.txt
+✅ Wrote K=1 splits to dataset_split_*.txt

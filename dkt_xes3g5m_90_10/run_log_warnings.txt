@@ -1,0 +1,30 @@
+[WARNING] Excessive padding in batch starting at index 16080: 2/5 (40.0%)
+[WARNING] Excessive padding in batch starting at index 1785: 2/5 (40.0%)
+==== Epoch: 0, Test AUC: 0.759466, Test Accuracy: 0.819769
+[WARNING] Excessive padding in batch starting at index 16080: 2/5 (40.0%)
+[WARNING] Excessive padding in batch starting at index 1785: 2/5 (40.0%)
+==== Epoch: 1, Test AUC: 0.772906, Test Accuracy: 0.822924
+[WARNING] Excessive padding in batch starting at index 16080: 2/5 (40.0%)
+[WARNING] Excessive padding in batch starting at index 1785: 2/5 (40.0%)
+==== Epoch: 2, Test AUC: 0.777543, Test Accuracy: 0.824401
+[WARNING] Excessive padding in batch starting at index 16080: 2/5 (40.0%)
+[WARNING] Excessive padding in batch starting at index 1785: 2/5 (40.0%)
+==== Epoch: 3, Test AUC: 0.779198, Test Accuracy: 0.825000
+[WARNING] Excessive padding in batch starting at index 16080: 2/5 (40.0%)
+[WARNING] Excessive padding in batch starting at index 1785: 2/5 (40.0%)
+==== Epoch: 4, Test AUC: 0.780302, Test Accuracy: 0.824149
+[WARNING] Excessive padding in batch starting at index 16080: 2/5 (40.0%)
+[WARNING] Excessive padding in batch starting at index 1785: 2/5 (40.0%)
+==== Epoch: 5, Test AUC: 0.780626, Test Accuracy: 0.825695
+[WARNING] Excessive padding in batch starting at index 16080: 2/5 (40.0%)
+[WARNING] Excessive padding in batch starting at index 1785: 2/5 (40.0%)
+==== Epoch: 6, Test AUC: 0.781811, Test Accuracy: 0.825693
+[WARNING] Excessive padding in batch starting at index 16080: 2/5 (40.0%)
+[WARNING] Excessive padding in batch starting at index 1785: 2/5 (40.0%)
+==== Epoch: 7, Test AUC: 0.783983, Test Accuracy: 0.825743
+[WARNING] Excessive padding in batch starting at index 16080: 2/5 (40.0%)
+[WARNING] Excessive padding in batch starting at index 1785: 2/5 (40.0%)
+==== Epoch: 8, Test AUC: 0.782736, Test Accuracy: 0.824425
+[WARNING] Excessive padding in batch starting at index 16080: 2/5 (40.0%)
+[WARNING] Excessive padding in batch starting at index 1785: 2/5 (40.0%)
+==== Epoch: 9, Test AUC: 0.783445, Test Accuracy: 0.825571

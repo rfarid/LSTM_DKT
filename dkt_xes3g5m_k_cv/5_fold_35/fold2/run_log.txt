@@ -1,0 +1,20 @@
+Training Sequences: 5059
+Testing Sequences: 1264
+Number of skills: 1265
+2025-04-30 16:28:03.193717: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-04-30 16:28:03.246804: W tensorflow/core/common_runtime/gpu/gpu_device.cc:2256] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+X shape: (5, 100, 2530) Y shape: (5, 100, 1266)y_true shape: (5, 100, 1266)
+y_pred shape: (5, 100, 1265)
+y_true shape: (5, 100, 1266)
+y_pred shape: (5, 100, 1265)
+==== Epoch: 0, Test AUC: 0.661844, Test Accuracy: 0.795762: -14.1552553176879883(100.000 %) -23542.737476
+==== Epoch: 1, Test AUC: 0.753265, Test Accuracy: 0.808822: -14.9557132720947275(100.000 %) -23608.762590
+==== Epoch: 2, Test AUC: 0.764445, Test Accuracy: 0.811139: -13.4342708587646481(100.000 %) -23570.838892
+==== Epoch: 3, Test AUC: 0.767038, Test Accuracy: 0.810895: -14.6126194000244147(100.000 %) -23746.723328
+==== Epoch: 4, Test AUC: 0.775838, Test Accuracy: 0.814505: -13.5474262237548837(100.000 %) -23760.182564
+==== Epoch: 5, Test AUC: 0.776837, Test Accuracy: 0.814894: -12.8424358367919921(100.000 %) -23954.774060
+==== Epoch: 6, Test AUC: 0.777686, Test Accuracy: 0.815316: -9.77935981750488349(100.000 %) -24054.567343
+==== Epoch: 7, Test AUC: 0.780580, Test Accuracy: 0.815822: -15.3282928466796886(100.000 %) -23922.221569
+==== Epoch: 8, Test AUC: 0.781228, Test Accuracy: 0.815847: -13.8897418975830084(100.000 %) -23757.887168
+==== Epoch: 9, Test AUC: 0.781848, Test Accuracy: 0.814484: -12.6481647491455087(100.000 %) -23854.984655
