@@ -11,11 +11,13 @@ For this challenge, I use the following real-world public dataset to train and e
 XES3G5M is a large-scale dataset that contains numerous questions and auxiliary information about related knowledge concepts
 (KCs). The dataset was collected from a real online mathematics learning platform and includes 7,652 questions, 865 knowledge concepts (KCs), and
 5,549,635 learning interactions from 18,066 students.
+
 As reported in the dataset paper [2], statistical patterns informed preprocessing decisions:
     - Sequence Length: ~89% of students have 200–500 interactions.
     - Answer Correctness: 54% of students correctly answer up to 80% of attempted questions.
     - Temporal Gaps: On average, there's an 80-hour variance between consecutive interactions.
     - Interaction Duration: Most students engage over periods longer than a year.
+
 These characteristics can be used in sub-sampling and filtering strategies to ensure representative training data while avoiding extreme outliers (e.g., very short sequences or low-reliability users).
 
 ---
@@ -114,17 +116,23 @@ These characteristics can be used in sub-sampling and filtering strategies to en
 
   These results demonstrate that the model continues to improve steadily in AUC and accuracy as training progresses, with peak AUC ~0.784 and accuracy ~0.826.
 
-*Full statistics are available in the accompanying result logs (`results_5fold.txt` and `results_full_run.txt`).*
+* Full statistics are available in the accompanying result logs:
+    * dkt_xes3g5m_k_cv folder for 5-fold cross-validation: `all_hisory_summary.txt`
+    * dkt_xes3g5m_90_10 folder for final training: `dataset.txt.history`
 
 
-#### Implementation Note:**  
+#### Implementation Note
+##### Excessive padding
 During training (both 5-fold CV and full dataset 90/10 run), warnings were raised due to **excessive padding** in some batches (e.g., 2 out of 5 samples = 40%).  
 This padding was automatically added to complete the final (or partial) batches when the total number of sequences was not divisible by the `batch_size`.  
 It occurred at different batch indices depending on the dataset split and did not indicate a data issue.  
-Model performance was unaffected, with AUC and accuracy progressing steadily across epochs.  
+Model performance was unaffected, with AUC and accuracy progressing steadily across epochs. 
 To suppress this warning in future or prevent padding:
 - Consider setting `drop_last=True` when batching (if your framework supports it), or
 - Choose a `batch_size` that divides the number of sequences evenly.
+
+##### Visualising the output
+dkt_plots.py is provided to visualise the AUC and Accuracy values throughout epochs.
 
 ---
 
@@ -141,7 +149,7 @@ To suppress this warning in future or prevent padding:
 - The original DKT implementation was based on TensorFlow 1.x, which posed extensibility challenges; this has been addressed by porting to TensorFlow 2.x.
 
 #### Opportunities
-- Incorporate other features (e.g., time gaps, content difficulty, prior attempts) into the input encoding.
+- Incorporate other features into the input encoding.
 - Explore attention-based KT models (e.g., SAKT[4]) for potentially improved performance and interpretability.
 - Analyse performance by user segments (e.g., low vs. high performers, novices vs. experienced learners) to uncover model biases and guide personalised interventions or curriculum adjustments.
 
@@ -151,8 +159,11 @@ To suppress this warning in future or prevent padding:
 ### References
 
 [1] [Deep Knowledge Tracing](https://github.com/chrispiech/DeepKnowledgeTracing/tree/master?tab=readme-ov-file)  
+
 [2] [A Knowledge Tracing Benchmark Dataset with Auxiliary Information](https://github.com/ai4ed/XES3G5M)
+
 [3] [Deep Knowledge Tracing Implementation](https://github.com/shinyflight/Deep-Knowledge-Tracing/tree/master)
+
 [4] [A Self-Attentive model for Knowledge Tracing](https://arxiv.org/pdf/1907.06837)
 
 
