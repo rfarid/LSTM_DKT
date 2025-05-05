@@ -1,5 +1,6 @@
 # This is the revised and ported copy of the DKT code
 # Python: 3.10, Ubuntu 22.04
+# Reza Farid <rezaf@unswalumni.com>
 # Original Python 2 code comes from https://github.com/shinyflight/Deep-Knowledge-Tracing/blob/master/dkt.py, which is
 #   Deep Knowledge Tracing (DKT) Implementation
 #   Mohammad M H Khajah <mohammad.khajah@colorado.edu>
