@@ -13,10 +13,10 @@ XES3G5M is a large-scale dataset that contains numerous questions and auxiliary 
 5,549,635 learning interactions from 18,066 students.
 
 As reported in the dataset paper [2], statistical patterns informed preprocessing decisions:
-    - Sequence Length: ~89% of students have 200–500 interactions.
-    - Answer Correctness: 54% of students correctly answer up to 80% of attempted questions.
-    - Temporal Gaps: On average, there's an 80-hour variance between consecutive interactions.
-    - Interaction Duration: Most students engage over periods longer than a year.
+- Sequence Length: ~89% of students have 200–500 interactions.
+- Answer Correctness: 54% of students correctly answer up to 80% of attempted questions.
+- Temporal Gaps: On average, there's an 80-hour variance between consecutive interactions.
+- Interaction Duration: Most students engage over periods longer than a year.
 
 These characteristics can be used in sub-sampling and filtering strategies to ensure representative training data while avoiding extreme outliers (e.g., very short sequences or low-reliability users).
 
@@ -31,14 +31,14 @@ These characteristics can be used in sub-sampling and filtering strategies to en
    A publicly available Python implementation of DKT [1] was found on GitHub [3], but it was developed in Python 2 and not directly usable.
 
 3. **Code Porting and Validation**  
-   The DKT implementation was successfully ported to **Python 3.10** and **Ubuntu 22.04**. Necessary library updates and compatibility adjustments were made.  
+   The DKT implementation was successfully ported to **Python 3.10** and **Ubuntu 22.04** (`dkt_3_10_k2_15.py`). Necessary library updates and compatibility adjustments were made.  
    The ported model was then validated on the **assistments** dataset, reproducing results consistent with those reported in the original paper.
 
 4. **Dataset Switch to XES3G5M**  
    The project then transitioned to using the **XES3G5M** dataset, which provides significantly larger and richer interaction sequences.
 
 5. **Data Preprocessing and Conversion**  
-   Since the XES3G5M dataset format differed from Python implementation[3], a custom data conversion pipeline was developed to transform it into the expected `dataset.txt` and `dataset_split.txt` format. Key steps included:
+   Since the XES3G5M dataset format differed from Python implementation[3], a custom data conversion pipeline was developed (`convert_stat_k_fold_cv_with_sampling.py`) to transform it into the expected `dataset.txt` and `dataset_split.txt` format. Key steps included:
    - Flattening sequence-level rows into (user, skill, correct) triples.
    - Filtering based on `selectmasks` to exclude invalid interactions.
    - Removing short sequences (less than a threshold length).
