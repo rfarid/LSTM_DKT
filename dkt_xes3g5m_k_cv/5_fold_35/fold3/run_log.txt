@@ -1,0 +1,40 @@
+Training Sequences: 5058
+Testing Sequences: 1265
+Number of skills: 1265
+2025-04-30 18:54:20.219487: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-04-30 18:54:20.236749: W tensorflow/core/common_runtime/gpu/gpu_device.cc:2256] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+X shape: (5, 100, 2530) Y shape: (5, 100, 1266)y_true shape: (5, 100, 1266)
+y_pred shape: (5, 100, 1265)
+y_true shape: (5, 100, 1266)
+y_pred shape: (5, 100, 1265)
+X shape: (5, 100, 2530) Y shape: (5, 100, 1266) Batch Loss: -11.1103067398071295(99.941 %) -23651.416982
+[WARNING] Excessive padding in batch starting at index 5055: 2/5 (40.0%)
+==== Epoch: 0, Test AUC: 0.682219, Test Accuracy: 0.793271: -14.683340072631836 (100.000 %) -23682.114116
+X shape: (5, 100, 2530) Y shape: (5, 100, 1266) Batch Loss: -11.8638019561767582(99.941 %) -23791.978033
+[WARNING] Excessive padding in batch starting at index 5055: 2/5 (40.0%)
+==== Epoch: 1, Test AUC: 0.748795, Test Accuracy: 0.804166: -15.238859176635742 (100.000 %) -23846.138869
+X shape: (5, 100, 2530) Y shape: (5, 100, 1266) Batch Loss: -15.3940019607543952(99.941 %) -23389.468133
+[WARNING] Excessive padding in batch starting at index 5055: 2/5 (40.0%)
+==== Epoch: 2, Test AUC: 0.762724, Test Accuracy: 0.808566: -14.687562942504883 (100.000 %) -23417.558042
+X shape: (5, 100, 2530) Y shape: (5, 100, 1266) Batch Loss: -13.6603107452392583(99.941 %) -23523.117043
+[WARNING] Excessive padding in batch starting at index 5055: 2/5 (40.0%)
+==== Epoch: 3, Test AUC: 0.767620, Test Accuracy: 0.810819: -12.628496170043945 (100.000 %) -23547.320655
+X shape: (5, 100, 2530) Y shape: (5, 100, 1266) Batch Loss: -14.5986204147338877(99.941 %) -23466.954446
+[WARNING] Excessive padding in batch starting at index 5055: 2/5 (40.0%)
+==== Epoch: 4, Test AUC: 0.773074, Test Accuracy: 0.811817: -10.90890884399414  (100.000 %) -23483.333456
+X shape: (5, 100, 2530) Y shape: (5, 100, 1266) Batch Loss: -13.9571971893310553(99.941 %) -23588.451871
+[WARNING] Excessive padding in batch starting at index 5055: 2/5 (40.0%)
+==== Epoch: 5, Test AUC: 0.775209, Test Accuracy: 0.812506: -12.261238098144531 (100.000 %) -23615.894792
+X shape: (5, 100, 2530) Y shape: (5, 100, 1266) Batch Loss: -13.2062225341796883(99.941 %) -23683.297382
+[WARNING] Excessive padding in batch starting at index 5055: 2/5 (40.0%)
+==== Epoch: 6, Test AUC: 0.777108, Test Accuracy: 0.813816: -11.377987861633336 (100.000 %) -23700.299693
+X shape: (5, 100, 2530) Y shape: (5, 100, 1266) Batch Loss: -12.2158927917480478(99.941 %) -23542.071990
+[WARNING] Excessive padding in batch starting at index 5055: 2/5 (40.0%)
+==== Epoch: 7, Test AUC: 0.778209, Test Accuracy: 0.813844: -12.445375442504883 (100.000 %) -23567.383321
+X shape: (5, 100, 2530) Y shape: (5, 100, 1266) Batch Loss: -12.3058843612670963(99.941 %) -23647.601853
+[WARNING] Excessive padding in batch starting at index 5055: 2/5 (40.0%)
+==== Epoch: 8, Test AUC: 0.779206, Test Accuracy: 0.813947: -12.130197525024414 (100.000 %) -23665.362933
+X shape: (5, 100, 2530) Y shape: (5, 100, 1266) Batch Loss: -13.6285533905029323(99.941 %) -23455.946819
+[WARNING] Excessive padding in batch starting at index 5055: 2/5 (40.0%)
+==== Epoch: 9, Test AUC: 0.778143, Test Accuracy: 0.813507: -14.775617599487305 (100.000 %) -23485.146368
