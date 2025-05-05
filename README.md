@@ -34,6 +34,9 @@ These characteristics can be used in sub-sampling and filtering strategies to en
    The DKT implementation was successfully ported to **Python 3.10** and **Ubuntu 22.04** (`dkt_3_10_k2_15.py`). Necessary library updates and compatibility adjustments were made.  
    The ported model was then validated on the **assistments** dataset, reproducing results consistent with those reported in the original paper.
 
+- Bug Fix – Test Evaluation Robustness:
+The original DKT implementation did not handle empty test sets, which could cause roc_auc_score to raise errors. In the ported version, I explicitly check for sufficient label diversity before computing AUC and accuracy, and skip evaluation gracefully if conditions are not met. This ensures robustness in edge cases and improves usability in cross-validation and real-world pipelines.
+
 4. **Dataset Switch to XES3G5M**  
    The project then transitioned to using the **XES3G5M** dataset, which provides significantly larger and richer interaction sequences.
 
