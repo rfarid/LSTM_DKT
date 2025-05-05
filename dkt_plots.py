@@ -80,20 +80,6 @@ def plot_predictions(preds_file):
     plt.grid(True)
     plt.show()
 
-def load_dkt_case(dkt_folder="dkt_k2_15"):
-    prefix = f"{dkt_folder}/assistments"
-    history_file = prefix +'.txt.history'
-    preds_file = prefix +'.txt.preds'
-    return history_file, preds_file
-
-
-def load_dkt_xes3g5m(dkt_folder="dkt_xes3g5m"):
-    prefix = f"{dkt_folder}/dataset"
-    history_file = prefix +'.txt.history'
-    preds_file = prefix +'.txt.preds'
-    return history_file, preds_file
-
-
 def load_dkt_xes3g5m_k_cv(dkt_folder="dkt_xes3g5m_k_cv", fold=1):
     prefix = f"{dkt_folder}/5_fold_35/fold{fold}/dataset"
     history_file = prefix +'.txt.history'
@@ -109,9 +95,11 @@ def load_dkt_xes3g5m_90_10(dkt_folder="dkt_xes3g5m_90_10"):
 
 if __name__ == "__main__":
     # Set your file paths here
-    history_file, preds_file = load_dkt_xes3g5m_k_cv(fold=1)
-    # history_file, preds_file = load_dkt_xes3g5m_90_10()
+    # history_file, preds_file = load_dkt_xes3g5m_k_cv(fold=1)
+    history_file, preds_file = load_dkt_xes3g5m_90_10()
+
     # Plot the history (Training Loss and Test AUC)
     plot_history(history_file)
+
     # Plot the predictions (Predicted Probability vs Actual Recall)
     plot_predictions(preds_file)
