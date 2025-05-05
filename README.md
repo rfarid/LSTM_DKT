@@ -127,12 +127,20 @@ During training (both 5-fold CV and full dataset 90/10 run), warnings were raise
 This padding was automatically added to complete the final (or partial) batches when the total number of sequences was not divisible by the `batch_size`.  
 It occurred at different batch indices depending on the dataset split and did not indicate a data issue.  
 Model performance was unaffected, with AUC and accuracy progressing steadily across epochs. 
+
 To suppress this warning in future or prevent padding:
 - Consider setting `drop_last=True` when batching (if your framework supports it), or
 - Choose a `batch_size` that divides the number of sequences evenly.
 
+For more details, check the files below:
+- dkt_xes3g5m_k_cv/`all_run_log_warnings.txt`
+- dkt_xes3g5m_90_10/`run_log_warnings.txt`
+
 ##### Visualising the output
-dkt_plots.py is provided to visualise the AUC and Accuracy values throughout epochs.
+`dkt_plots.py` is provided to visualise the AUC and Accuracy values throughout epochs.
+
+#### Reproducing the results
+To reproduce the results, please note you need to download `XES3G5M` and copy it under the same folder here. I have used `question_level` folder.
 
 ---
 
