@@ -1,9 +1,6 @@
 Training Sequences: 5059
 Testing Sequences: 1264
 Number of skills: 1265
-2025-04-30 23:36:37.837316: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
-2025-04-30 23:36:37.853929: W tensorflow/core/common_runtime/gpu/gpu_device.cc:2256] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
-Skipping registering GPU devices...
 X shape: (5, 100, 2530) Y shape: (5, 100, 1266)y_true shape: (5, 100, 1266)
 y_pred shape: (5, 100, 1265)
 y_true shape: (5, 100, 1266)
