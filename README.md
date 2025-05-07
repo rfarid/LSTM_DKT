@@ -143,7 +143,38 @@ For more details, check the files below:
 `dkt_plots.py` is provided to visualise the AUC and Accuracy values throughout epochs.
 
 #### Reproducing the results
+
 To reproduce the results, please note you need to download `XES3G5M` and copy it under the same folder here. I have used `question_level` folder.
+
+##### Data Preparation for 5-fold Cross validation
+Check `convert_stat_k_fold_cv_with_sampling.py` is set as below and run it
+
+```python
+    run_k_fold_cv(DATA_FOLDER, TRAIN_CSV, TEST_CSV, 5)
+    # run_full_data(DATA_FOLDER, TRAIN_CSV, TEST_CSV)
+```
+
+##### Data Preparation for Full dataset (90/10 split)
+Check `convert_stat_k_fold_cv_with_sampling.py` is set as below and run it
+
+```python
+    # run_k_fold_cv(DATA_FOLDER, TRAIN_CSV, TEST_CSV, 5)
+    run_full_data(DATA_FOLDER, TRAIN_CSV, TEST_CSV)
+```
+
+##### Training for 5-fold Cross validation
+run `dkt_3_10_k2_15.py.py` from command line/terminal by providing the path to the relevant dataset.txt and dataset_split.txt files. The below shows how to run it for fold1.
+
+```bash
+    python dkt_3_10_k2_15.py --dataset dkt_xes3g5m_k_cv/5_fold_35/fold1/dataset.txt --splitfile dkt_xes3g5m_k_cv/5_fold_35/fold1/dataset_split_1.txt --epochs 10
+```
+
+##### Training for Full dataset (90/10 split)
+run `dkt_3_10_k2_15.py.py` from command line/terminal by providing the path to the relevant `dataset.txt` and `dataset_split.txt` files as below:
+
+```bash
+    python dkt_3_10_k2_15.py --dataset dkt_xes3g5m_90_10/dataset.txt --splitfile dkt_xes3g5m_90_10/dataset_split.txt --epochs 10
+```
 
 ---
 
