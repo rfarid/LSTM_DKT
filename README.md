@@ -6,6 +6,22 @@ The aim of this case study is to
 - build, train, and evaluate a deep learning (DL) based knowledge tracing (KT) model [1] designed to accurately predict students' knowledge state across a set of knowledge concepts. 
 - reproduce existing results and adapt the model to a larger, more modern dataset.
 
+### Project Context
+
+**Note:** This repository is a **learning project** and not intended as production-quality code.
+
+It was developed to explore deep learning concepts in educational modelling (specifically, knowledge tracing) by:
+- Reproducing foundational research (e.g., Deep Knowledge Tracing [1]).
+- Porting and adapting a legacy implementation to modern Python and TensorFlow.
+- Experimenting with dataset preprocessing, filtering, cross-validation, and evaluation strategies.
+
+As such, this codebase prioritises **reproducibility and experimentation** over software engineering concerns like modularity, unit testing, or production-readiness.
+
+Future improvements may include:
+- Cleaner abstractions and modular code structure.
+- Additional experiments with attention-based models.
+- Deeper analysis of model performance across different student groups or knowledge concepts.
+
 #### Dataset
 For this challenge, I use the following real-world public dataset to train and evaluate all DL models: XES3G5M [2].
 XES3G5M is a large-scale dataset that contains numerous questions and auxiliary information about related knowledge concepts
@@ -18,7 +34,7 @@ As reported in the dataset paper [2], statistical patterns informed preprocessin
 - Temporal Gaps: On average, there's an 80-hour variance between consecutive interactions.
 - Interaction Duration: Most students engage over periods longer than a year.
 
-These characteristics can be used in sub-sampling and filtering strategies to ensure representative training data while avoiding extreme outliers (e.g., very short sequences or low-reliability users).
+These characteristics can be used in subsampling and filtering strategies to ensure representative training data while avoiding extreme outliers (e.g., very short sequences or low-reliability users).
 
 ---
 
@@ -34,8 +50,8 @@ These characteristics can be used in sub-sampling and filtering strategies to en
    The DKT implementation was successfully ported to **Python 3.10** and **Ubuntu 22.04** (`dkt_3_10_k2_15.py`). Necessary library updates and compatibility adjustments were made.  
    The ported model was then validated on the **assistments** dataset, reproducing results consistent with those reported in the original paper.
 
-- Bug Fix – Test Evaluation Robustness:
-The original DKT implementation did not handle empty test sets, which could cause roc_auc_score to raise errors. In the ported version, I explicitly check for sufficient label diversity before computing AUC and accuracy, and skip evaluation gracefully if conditions are not met. This ensures robustness in edge cases and improves usability in cross-validation and real-world pipelines.
+   - Bug Fix – Test Evaluation Robustness:
+   The original DKT implementation did not handle empty test sets, which could cause roc_auc_score to raise errors. In the ported version, I explicitly check for sufficient label diversity before computing AUC and accuracy, and skip evaluation gracefully if conditions are not met. This ensures robustness in edge cases and improves usability in cross-validation and real-world pipelines.
 
 4. **Dataset Switch to XES3G5M**  
    The project then transitioned to using the **XES3G5M** dataset, which provides significantly larger and richer interaction sequences.
@@ -49,7 +65,7 @@ The original DKT implementation did not handle empty test sets, which could caus
    - Filtering thresholds for sequence length (`min_seq_len ≥ 100`) and user correctness (`avg_correct ≥ 0.4`) were chosen based on summary statistics reported in the dataset paper (Figure 3), aiming to retain representative, high-quality data.
 
 6. **Cross-Validation and Sampling**  
-   Due to the size of the dataset, stratified k-fold cross-validation (k=5) was implemented with optional sub-sampling to reduce compute time while maintaining representative user performance distributions. This required:
+   Due to the size of the dataset, stratified k-fold cross-validation (k=5) was implemented with optional subsampling to reduce compute time while maintaining representative user performance distributions. This required:
    - Calculating per-user average correctness.
    - Discretising users into strata for stratified splits.
    - Writing `dataset_split_X.txt` files to guide the DKT training script.
@@ -149,7 +165,7 @@ To reproduce the results, please note you need to download `XES3G5M` and copy it
 ##### Data Preparation for 5-fold Cross validation
 Check `convert_stat_k_fold_cv_with_sampling.py` is set as below and run it
 
-```python
+```
     run_k_fold_cv(DATA_FOLDER, TRAIN_CSV, TEST_CSV, 5)
     # run_full_data(DATA_FOLDER, TRAIN_CSV, TEST_CSV)
 ```
@@ -157,7 +173,7 @@ Check `convert_stat_k_fold_cv_with_sampling.py` is set as below and run it
 ##### Data Preparation for Full dataset (90/10 split)
 Check `convert_stat_k_fold_cv_with_sampling.py` is set as below and run it
 
-```python
+```
     # run_k_fold_cv(DATA_FOLDER, TRAIN_CSV, TEST_CSV, 5)
     run_full_data(DATA_FOLDER, TRAIN_CSV, TEST_CSV)
 ```
@@ -210,7 +226,7 @@ run `dkt_3_10_k2_15.py.py` from command line/terminal by providing the path to t
 
 
 ## License
-This repository contains adapted code originally from [shinyflight/Deep-Knowledge-Tracing](https://github.com/shinyflight/Deep-Knowledge-Tracing), which is licensed under the MIT License.
+This repository contains adapted code originally from [`shinyflight/Deep-Knowledge-Tracing`](https://github.com/shinyflight/Deep-Knowledge-Tracing), which is licensed under the MIT License.
 All original MIT-licensed code remains under the MIT License (see `LICENSE_ORIGINAL.txt`).
 All modifications and new code in this repository are licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/).
 You are free to use, adapt, and redistribute this work for **non-commercial purposes**, provided you give appropriate credit.
